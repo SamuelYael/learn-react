@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81316b21-bb2c-4817-99d0-f1b52c759276" name="Default Changelist" comment="" />
+    <list default="true" id="81316b21-bb2c-4817-99d0-f1b52c759276" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addreacttofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/addreacttofile.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +23,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1XMIKkq7qZg5Ks0uMuST41mZimE" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,6 +35,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -42,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580849474234</updated>
       <workItem from="1580849475500" duration="3529000" />
+      <workItem from="1582494209320" duration="636000" />
     </task>
     <servers />
   </component>
@@ -53,5 +62,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1581626653716" />
+    <state x="616" y="366" key="com.intellij.ide.util.TipDialog" timestamp="1582494216364">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="616" y="366" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1582494216364" />
   </component>
 </project>

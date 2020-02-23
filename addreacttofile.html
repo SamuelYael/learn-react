@@ -13,35 +13,84 @@
 
 <script type="text/babel">
 
-    function WelcomeText(props){
+    function PageHeader(props){
         return (
             <div>
-                <h2>props.title</h2>
-                <p>props.slogan</p>
+                <h2> {props.title} </h2>
+                <p> {props.slogan} </p>
             </div>
         )
     }
 
-    function Vehicles(props){
+    function Vehicles (props){
         return (
-            <select>
-            </select>
+            <div>
+                <SelectOptions cars = {props.cars} />
+
+            </div>
         )
     }
 
-    function VehicleDetails(props){
+    function SelectOptions(props){
+        return (
+            <div>
+                <h2> Choose Options </h2>
+                <div>
+                    <h5>New Only</h5>
+                    <input type="checkbox" id="coding" name="interest" value="coding" checked="" />
 
+
+                </div>
+                <div>
+                    <select>
+                        <option value="All">All</option>
+                        <option value="Cars">{props.vehicles.vehicle1.car}</option>
+                        <option value="Trucks">{props.vehicles.vehicle1.car}</option>
+                        <option value="Convertibles">{props.vehicles.vehicle1.car}</option>
+                    </select>
+                </div>
+            </div>
+        )
+    }
+
+    function ListVehicle(props){
+        return (
+            <div>
+            </div>
+        )
+    }
+
+    function ListVehicleHeader(props){
+        return (
+            <div>
+            </div>
+        )
+    }
+
+    function ListVehicleItem(props){
+        return (
+            <div>
+            </div>
+        )
     }
 
 
 
-
-
+    function VehicleApplication(props){
+        return (
+            <div>
+                <PageHeader title = 'Welcome to React Transportation' slogan = 'The best place to buy vehicles online'/>
+                <Vehicles {vehicles = {vehicle1:{name:'car'}}} />
+            </div>
+        )
+    }
 
     ReactDOM.render(
-        <div>Hello World</div>,
+        <VehicleApplication />
+        ,
         document.getElementById("root")
     )
+
 </script>
 
 </body>
