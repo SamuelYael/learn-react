@@ -22,19 +22,20 @@
         )
     }
 
-    function Vehicles (props){
+    function Entities (props){
         return (
             <div>
-                <SelectOptions cars = {props.cars} />
-
+                <ListEntity entity = {props.entities[0] }/>
+                <ListEntity entity = {props.entities[1] }/>
+                <ListEntity entity = {props.entities[2] }/>
             </div>
         )
     }
 
-    function SelectOptions(props){
+    function Options(props){
         return (
             <div>
-                <h2> Choose Options </h2>
+                <h2> {props.title} </h2>
                 <div>
                     <h5>New Only</h5>
                     <input type="checkbox" id="coding" name="interest" value="coding" checked="" />
@@ -44,30 +45,31 @@
                 <div>
                     <select>
                         <option value="All">All</option>
-                        <option value="Cars">{props.vehicles.vehicle1.car}</option>
-                        <option value="Trucks">{props.vehicles.vehicle1.car}</option>
-                        <option value="Convertibles">{props.vehicles.vehicle1.car}</option>
+                        <option value="Cars">{props.selectOptions[0]}</option>
+                        <option value="Trucks">{props.selectOptions[1]}</option>
+                        <option value="Convertibles">{props.selectOptions[2]}</option>
                     </select>
                 </div>
             </div>
         )
     }
 
-    function ListVehicle(props){
+    function ListEntity(props){
+        return (
+            <div>
+                <h2>{props.entities.name}</h2>
+            </div>
+        )
+    }
+
+    function ListHeaders(props){
         return (
             <div>
             </div>
         )
     }
 
-    function ListVehicleHeader(props){
-        return (
-            <div>
-            </div>
-        )
-    }
-
-    function ListVehicleItem(props){
+    function ListEntityItem(props){
         return (
             <div>
             </div>
@@ -76,17 +78,23 @@
 
 
 
-    function VehicleApplication(props){
+    function Application(props){
         return (
             <div>
                 <PageHeader title = 'Welcome to React Transportation' slogan = 'The best place to buy vehicles online'/>
-                <Vehicles {vehicles = {vehicle1:{name:'car'}}} />
+                <Options title = 'Choose Options' selectOptions = {['Car', 'Trucks', 'Convertibles']} />
+                <Entities entities = {[{name:'Car', specifications:[{year:'2013', model:'A', price:'32000'},{year:'2011', model:'B', price:'4400'},{year:'2016', model:'B', price:'15500'}]},
+                    {name:'Trucks', specifications:[{year:'2014', model:'D', price:'18000'},{year:'2013', model:'E', price:'5200'}]},
+                    {name:'Convertibles', specifications:[{year:'2009', model:'F', price:'2000'},{year:'2010', model:'G', price:'6000'},{year:'2012', model:'H', price:'12500'},{year:'2017', model:'M', price:'50000'}]}
+
+                ]
+                                        } />
             </div>
         )
     }
 
     ReactDOM.render(
-        <VehicleApplication />
+        <Application />
         ,
         document.getElementById("root")
     )
