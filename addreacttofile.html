@@ -13,7 +13,7 @@
 
 <script type="text/babel">
 
-    function PageHeader(props){
+    function PageHeader(props) {
         return (
             <div>
                 <h2> {props.title} </h2>
@@ -22,25 +22,49 @@
         )
     }
 
-    function Entities (props){
+    function ListVehicles(props) {
         return (
             <div>
-                <ListEntity entity = {props.entities[0] }/>
-                <ListEntity entity = {props.entities[1] }/>
-                <ListEntity entity = {props.entities[2] }/>
+                <h2>{props.entities[0].name}</h2>
+                <ul>
+                <table>
+                    <ListHeaders header={props.headers}/>
+                    <ListEntity specs = {props.entities[0].specifications[0]} />
+                    <ListEntity specs = {props.entities[0].specifications[1]} />
+                    <ListEntity specs = {props.entities[0].specifications[2]} />
+                </table>
+                </ul>
+                <h2>{props.entities[1].name}</h2>
+                <ul>
+                <table>
+                    <ListHeaders header={props.headers}/>
+                    <ListEntity specs = {props.entities[1].specifications[0]} />
+                    <ListEntity specs = {props.entities[1].specifications[1]} />
+
+                </table>
+                </ul>
+                <h2>{props.entities[2].name}</h2>
+                <ul>
+                <table>
+                    <ListHeaders header={props.headers}/>
+                    <ListEntity specs = {props.entities[2].specifications[0]} />
+                    <ListEntity specs = {props.entities[2].specifications[1]} />
+                    <ListEntity specs = {props.entities[2].specifications[2]} />
+                    <ListEntity specs = {props.entities[2].specifications[3]} />
+                </table>
+                </ul>
+
             </div>
         )
     }
 
-    function Options(props){
+    function Options(props) {
         return (
             <div>
                 <h2> {props.title} </h2>
                 <div>
                     <h5>New Only</h5>
-                    <input type="checkbox" id="coding" name="interest" value="coding" checked="" />
-
-
+                    <input type="checkbox" id="coding" name="interest" value="coding" checked=""/>
                 </div>
                 <div>
                     <select>
@@ -54,47 +78,70 @@
         )
     }
 
-    function ListEntity(props){
+    function ListHeaders(props) {
         return (
-            <div>
-                <h2>{props.entities.name}</h2>
-            </div>
+            <tr>
+                <th>{props.header.year}</th>
+                <th>{props.header.model}</th>
+                <th>{props.header.price}</th>
+                <th>{props.header.buy}</th>
+            </tr>
+
         )
     }
 
-    function ListHeaders(props){
+    function ListEntity(props) {
         return (
-            <div>
-            </div>
+            <tr>
+                <td>{props.specs.year}</td>
+                <td>{props.specs.model}</td>
+                <td>{props.specs.price}</td>
+                <td>
+                    <button>Buy Now</button>
+                </td>
+            </tr>
         )
     }
 
-    function ListEntityItem(props){
+
+    function Application(props) {
         return (
             <div>
-            </div>
-        )
-    }
-
-
-
-    function Application(props){
-        return (
-            <div>
-                <PageHeader title = 'Welcome to React Transportation' slogan = 'The best place to buy vehicles online'/>
-                <Options title = 'Choose Options' selectOptions = {['Car', 'Trucks', 'Convertibles']} />
-                <Entities entities = {[{name:'Car', specifications:[{year:'2013', model:'A', price:'32000'},{year:'2011', model:'B', price:'4400'},{year:'2016', model:'B', price:'15500'}]},
-                    {name:'Trucks', specifications:[{year:'2014', model:'D', price:'18000'},{year:'2013', model:'E', price:'5200'}]},
-                    {name:'Convertibles', specifications:[{year:'2009', model:'F', price:'2000'},{year:'2010', model:'G', price:'6000'},{year:'2012', model:'H', price:'12500'},{year:'2017', model:'M', price:'50000'}]}
+                <PageHeader title='Welcome to React Transportation' slogan='The best place to buy vehicles online'/>
+                <Options title='Choose Options' selectOptions={['Car', 'Trucks', 'Convertibles']}/>
+                <ListVehicles headers={{year:'Year', model:'Model', price:'Price', buy:'Buy'}} entities={[{
+                    name: 'Car',
+                    specifications: [{year: '2013', model: 'A', price: '32000'}, {
+                        year: '2011',
+                        model: 'B',
+                        price: '4400'
+                    }, {year: '2016', model: 'B', price: '15500'}]
+                },
+                    {
+                        name: 'Trucks',
+                        specifications: [{year: '2014', model: 'D', price: '18000'}, {
+                            year: '2013',
+                            model: 'E',
+                            price: '5200'
+                        }]
+                    },
+                    {
+                        name: 'Convertibles',
+                        specifications: [{year: '2009', model: 'F', price: '2000'}, {
+                            year: '2010',
+                            model: 'G',
+                            price: '6000'
+                        }, {year: '2012', model: 'H', price: '12500'}, {year: '2017', model: 'M', price: '50000'}]
+                    }
 
                 ]
-                                        } />
+                }/>
             </div>
         )
     }
 
     ReactDOM.render(
-        <Application />
+        <Application/>
         ,
         document.getElementById("root")
     )
